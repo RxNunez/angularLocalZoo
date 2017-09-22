@@ -15,7 +15,7 @@ import { Component } from '@angular/core';
         </select>
       </div>
       <div class="col-md-2">
-        <button class="btn btn-default">Add New Animal<span class="add-plus">&nbsp;+</span></button>
+        <button class="btn btn-default btn-lg"><span class="add-plus">&nbsp;+<br></span>Add New Animal</button>
       </div>
     </div>
       <div class="well" *ngFor="let currentAnimal of masterAnimals">
@@ -35,7 +35,7 @@ import { Component } from '@angular/core';
             <p>Dislikes:&nbsp;{{currentAnimal.dislikes}}</p>
           </div>
           <div class="col-md-2">
-            <button class="btn btn-success">EDIT</button>
+            <button class="btn btn-success btn-lg">EDIT</button>
           </div>
       </div>
     </div>
@@ -53,8 +53,8 @@ export class AppComponent {
 
   masterAnimals: Animal[] = [
     new Animal('/resources/images/arcticFox.jpg','Arctic Fox','Moon','10-13-2016','Carnivore','Northern Trail',5,'Female','Cool shade','Loud Noises'),
-    new Animal('/resources/images/northwestBlackTailedDeer.jpg','Northwest Black Tailed Deer','Moon','2010-10-13','Carnivore','Northern Trail',5,'Female','Cool shade','Loud Noises'),
-    new Animal('/resources/images/ocelot.jpg','Ocelot','Moon','2010-10-13','Carnivore','Northern Trail',5,'Female','Cool shade','Loud Noises'),
+    new Animal('/resources/images/northwestBlackTailedDeer.jpg','Northwest Black Tailed Deer','Moon','11-25-2009','Carnivore','Northern Trail',5,'Female','Cool shade','Loud Noises'),
+    new Animal('/resources/images/ocelot.jpg','Ocelot','Moon','01-01-2013','Carnivore','Northern Trail',5,'Female','Cool shade','Loud Noises'),
   ];
 
   public birthDates;
