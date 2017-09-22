@@ -24,12 +24,18 @@ import { Component } from '@angular/core';
             <img src="{{currentAnimal.images}}">
             <p>{{currentAnimal.species}}</p>
           </div>
-          <div class="col-md-4">
-            <h3>Name:&nbsp;{{currentAnimal.name}}</h3>
-            <h3>Age:&nbsp;{{getAge(currentAnimal.bday)}}</h3>
+          <div class="col-md-6">
+            <h3>&nbsp;{{currentAnimal.name}}</h3>
+            <p>Age:&nbsp;{{getAge(currentAnimal.bday)}}</p>
+            <p>Birthday:&nbsp;{{currentAnimal.bday}}</p>
+            <p>Sex:&nbsp;{{currentAnimal.sex}}</p>
+            <p>Number of caretakers:&nbsp;{{currentAnimal.caretakers}}</p>
+            <p>Location:&nbsp;{{currentAnimal.location}}</p>
+            <p>Likes:&nbsp;{{currentAnimal.likes}}</p>
+            <p>Dislikes:&nbsp;{{currentAnimal.dislikes}}</p>
           </div>
-          <div class="col-md-4">
-            <p>{{currentAnimal.likes}}<br>{{currentAnimal.dislikes}}</p>
+          <div class="col-md-2">
+            <button class="btn btn-success">EDIT</button>
           </div>
       </div>
     </div>
@@ -47,7 +53,7 @@ export class AppComponent {
 
   masterAnimals: Animal[] = [
     new Animal('/resources/images/arcticFox.jpg','Arctic Fox','Moon','10-13-2016','Carnivore','Northern Trail',5,'Female','Cool shade','Loud Noises'),
-    new Animal('/resources/images/northwestBlackTailedDeer.jpg','Arctic Fox','Moon','2010-10-13','Carnivore','Northern Trail',5,'Female','Cool shade','Loud Noises'),
+    new Animal('/resources/images/northwestBlackTailedDeer.jpg','Northwest Black Tailed Deer','Moon','2010-10-13','Carnivore','Northern Trail',5,'Female','Cool shade','Loud Noises'),
     new Animal('/resources/images/ocelot.jpg','Ocelot','Moon','2010-10-13','Carnivore','Northern Trail',5,'Female','Cool shade','Loud Noises'),
   ];
 
