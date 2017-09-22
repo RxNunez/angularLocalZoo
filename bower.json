@@ -1,0 +1,21 @@
+{
+  "name": "zoomapp",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Maria Thomas <malethr@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "botstrap": "bootsrap#*",
+    "bootstrap": "^3.3.7"
+  }
+}
