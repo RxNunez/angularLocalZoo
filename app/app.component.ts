@@ -17,11 +17,18 @@ import { Component } from '@angular/core';
       <div class="col-md-2">
         <button class="btn btn-default">Add New Animal<span class="add-plus">&nbsp;+</span></button>
       </div>
-      <div class="well" *ngFor="let currentAnimal of animals">
+    </div>
+      <div class="well" *ngFor="let currentAnimal of masterAnimals">
         <div class="row">
           <div class="col-md-4">
-            <img src="">
-            <h3></h3>
+            <img src="{{currentAnimal.images}}">
+            <p>{{currentAnimal.species}}</p>
+          </div>
+          <div class="col-md-4">
+            <h3>Name:&nbsp;{{currentAnimal.name}}</h3>
+          </div>
+          <div class="col-md-4">
+            <p>{{currentAnimal.likes}}<br>{{currentAnimal.dislikes}}</p>
           </div>
       </div>
     </div>
@@ -30,14 +37,23 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
+  public dateNow = new Date();
+  public age: number;
 
+  masterAnimals: Animal[] = [
+    new Animal('/resources/images/arcticFox.jpg','Arctic Fox','Moon','2010-10-13','Carnivore','Northern Trail',5,'Female','Cool shade','Loud Noises'),
+    new Animal('/resources/images/northwestBlackTailedDeer.jpg','Arctic Fox','Moon','2010-10-13','Carnivore','Northern Trail',5,'Female','Cool shade','Loud Noises'),
+    new Animal('/resources/images/ocelot.jpg','Ocelot','Moon','2010-10-13','Carnivore','Northern Trail',5,'Female','Cool shade','Loud Noises'),
+  ];
+
+  getAge(birthDate){
+    this.age = this.dateNow.getFullYear()-birthDate.getFullYear();
+  }
 }
 
 export class Animal {
-  public dateNow: Date;
-  public age: number;
-  constructor(public images: string, public species: string, public name: string, public bday: Date, public diet: string, public location: string, public caretakers: number, public sex: string, public likes:string, public dislikes: string){
-    this.dateNow = new Date();
-    this.age = this.dateNow.getFullYear()-bday.getFullYear();
+
+  constructor(public images: string, public species: string, public name: string, public bday: string, public diet: string, public location: string, public caretakers: number, public sex: string, public likes: string, public dislikes: string){
+
   }
 }
