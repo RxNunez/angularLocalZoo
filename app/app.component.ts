@@ -21,11 +21,17 @@ import { Component } from '@angular/core';
     <hr>
 
     <div class="form-group row">
-      <div class="col-md-4">
-        <img src={{selectedAnimal.image}}>
+
+      <div class="col-md-6">
+        <h2>EDIT FORM</h2>
         <h3>{{selectedAnimal.species}}</h3>
+        <img src={{selectedAnimal.image}}>
+      </div>
+      <div class="col-md-6">
+        <label>Edit species:</label>
+        <input class="form-control"[(ngModel)]="selectedAnimal.species">
         <label>Edit image URL:</label>
-        <input type="url" class="form-control" [(ngModel)]="selectedAnimal.image" placeholder="paste URL">
+        <input type="url" class="form-control" [(ngModel)]="selectedAnimal.image">
         <label>Edit name:</label>
         <input class="form-control"[(ngModel)]="selectedAnimal.name">
         <label>Edit location:</label>
@@ -37,7 +43,8 @@ import { Component } from '@angular/core';
         <label>Edit likes:</label>
         <input class="form-control"[(ngModel)]="selectedAnimal.likes">
         <label>Enter dislikes:</label>
-        <input class="form-control"[(ngModel)]="selectedAnimal.dislikes">
+        <input class="form-control"[(ngModel)]="selectedAnimal.dislikes"><br>
+        <button class="btn btn-primary btn-lg">Submit</button>
       </div>
     </div>
 
@@ -53,7 +60,6 @@ import { Component } from '@angular/core';
           <p>Birthday:&nbsp;{{currentAnimal.bday}}</p>
           <p>Sex:&nbsp;{{currentAnimal.sex}}</p>
           <p>Number of caretakers:&nbsp;{{currentAnimal.caretakers}}</p>
-
         </div>
         <div class="col-md-4">
           <p>Location:&nbsp;{{currentAnimal.location}}</p>
