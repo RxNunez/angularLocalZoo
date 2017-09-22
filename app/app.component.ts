@@ -26,6 +26,7 @@ import { Component } from '@angular/core';
           </div>
           <div class="col-md-4">
             <h3>Name:&nbsp;{{currentAnimal.name}}</h3>
+            <h3>Age:&nbsp;{{getAge(currentAnimal.bday)}}</h3>
           </div>
           <div class="col-md-4">
             <p>{{currentAnimal.likes}}<br>{{currentAnimal.dislikes}}</p>
@@ -37,17 +38,25 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
-  public dateNow = new Date();
+  public currentTime = new Date();
+  month: number = this.currentTime.getMonth() + 1;
+  day: number = this.currentTime.getDate();
+  year: number = this.currentTime.getFullYear();
   public age: number;
 
+
   masterAnimals: Animal[] = [
-    new Animal('/resources/images/arcticFox.jpg','Arctic Fox','Moon','2010-10-13','Carnivore','Northern Trail',5,'Female','Cool shade','Loud Noises'),
+    new Animal('/resources/images/arcticFox.jpg','Arctic Fox','Moon','10-13-2016','Carnivore','Northern Trail',5,'Female','Cool shade','Loud Noises'),
     new Animal('/resources/images/northwestBlackTailedDeer.jpg','Arctic Fox','Moon','2010-10-13','Carnivore','Northern Trail',5,'Female','Cool shade','Loud Noises'),
     new Animal('/resources/images/ocelot.jpg','Ocelot','Moon','2010-10-13','Carnivore','Northern Trail',5,'Female','Cool shade','Loud Noises'),
   ];
 
-  getAge(birthDate){
-    this.age = this.dateNow.getFullYear()-birthDate.getFullYear();
+  public birthDates;
+
+  getAge(bday){
+    this.birthDates = new Date(bday);
+    return this.age = this.currentTime.getFullYear()-this.birthDates.getFullYear();
+
   }
 }
 
