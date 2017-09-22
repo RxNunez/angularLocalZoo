@@ -19,9 +19,7 @@ import { Component } from '@angular/core';
       </div>
     </div>
     <hr>
-
-    <div class="form-group row">
-
+    <div class="form-group row" *ngIf="selectedAnimal">
       <div class="col-md-6">
         <h2>EDIT FORM</h2>
         <h3>{{selectedAnimal.species}}</h3>
@@ -44,7 +42,7 @@ import { Component } from '@angular/core';
         <input class="form-control"[(ngModel)]="selectedAnimal.likes">
         <label>Enter dislikes:</label>
         <input class="form-control"[(ngModel)]="selectedAnimal.dislikes"><br>
-        <button class="btn btn-primary btn-lg">Submit</button>
+        <button class="btn btn-primary btn-lg" (click)="finishedEditing()">Submit</button>
       </div>
     </div>
 
@@ -66,7 +64,7 @@ import { Component } from '@angular/core';
           <p>Likes:&nbsp;{{currentAnimal.likes}}</p>
           <p>Dislikes:&nbsp;{{currentAnimal.dislikes}}</p>
           <br><br>
-          <button class="btn btn-success btn-lg" (click)="editAnimal()">Edit!</button>
+          <button class="btn btn-success btn-lg" (click)="editAnimal(currentAnimal)">Edit!</button>
         </div>
       </div>
     </div>
@@ -89,15 +87,19 @@ export class AppComponent {
     new Animal('/resources/images/ocelot.jpg','Ocelot','Tinkerbell','01-01-2013','Carnivore','Northern Trail',5,'Female','Cool shade','Loud Noises'),
   ];
 
-    selectedAnimal: Animal = this.masterAnimals[0];
+    selectedAnimal = null;
 
   getAge(bday){
     this.birthDates = new Date(bday);
     return this.age = this.currentTime.getFullYear()-this.birthDates.getFullYear();
   }
 
-  editAnimal(){
-    alert("edit cliked")
+  editAnimal(clickedAnimal){
+    this.selectedAnimal = clickedAnimal;
+  }
+
+  finishedEditing() {
+    this.selectedAnimal = null;
   }
 
 }
