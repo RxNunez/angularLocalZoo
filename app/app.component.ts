@@ -6,15 +6,15 @@ import { Component } from '@angular/core';
   <div class="container">
     <h1 class="jumbotron">ZOOmAPP</h1>
     <div class="row">
-      <div class="col-md-10">
+      <div class="col-md-9">
         <label>View as:</label>
-        <select (change)="onChange($event.target.value)">
+        <select (change)="onChange($event.target.value)" class="form-control form-control-lg">
           <option selected="selected" value="all">All Animals</option>
           <option value="young">All Young Animals</option>
           <option value="old">All Old Animals</option>
         </select>
       </div>
-      <div class="col-md-2">
+      <div class="col-md-3">
         <button class="btn btn-default btn-lg"><span class="add-plus">&nbsp;+<br></span>Add New Animal</button>
       </div>
     </div>
@@ -45,7 +45,6 @@ import { Component } from '@angular/core';
         <button class="btn btn-primary btn-lg" (click)="finishedEditing()">Submit</button>
       </div>
     </div>
-
     <div class="well" *ngFor="let currentAnimal of masterAnimals">
       <div class="row">
         <div class="col-md-4">
@@ -80,7 +79,6 @@ export class AppComponent {
   public age: number;
   public birthDates;
 
-
   masterAnimals: Animal[] = [
     new Animal('/resources/images/arcticFox.jpg','Arctic Fox','Moon','10-13-2016','Carnivore','Northern Trail',5,'Female','Cool shade','Loud Noises'),
     new Animal('/resources/images/northwestBlackTailedDeer.jpg','Northwest Black Tailed Deer','Prince','11-25-2009','Carnivore','Northern Trail',5,'Male','Cool shade','Loud Noises'),
@@ -105,7 +103,6 @@ export class AppComponent {
 }
 
 export class Animal {
-
   constructor(public image: string, public species: string, public name: string, public bday: string, public diet: string, public location: string, public caretakers: number, public sex: string, public likes: string, public dislikes: string){
   }
 }
