@@ -19,33 +19,7 @@ import { Animal } from './animal.model';
         <button class="btn btn-default btn-lg"><span class="add-plus">&nbsp;+<br></span>Add New Animal</button>
       </div>
     </div>
-    <hr>
-    <div class="form-group row" *ngIf="selectedAnimal">
-      <div class="col-md-6">
-        <h2>EDIT FORM</h2>
-        <h3>{{selectedAnimal.species}}</h3>
-        <img src={{selectedAnimal.image}}>
-      </div>
-      <div class="col-md-6">
-        <label>Edit species:</label>
-        <input class="form-control"[(ngModel)]="selectedAnimal.species">
-        <label>Edit image URL:</label>
-        <input type="url" class="form-control" [(ngModel)]="selectedAnimal.image">
-        <label>Edit name:</label>
-        <input class="form-control"[(ngModel)]="selectedAnimal.name">
-        <label>Edit location:</label>
-        <input class="form-control"[(ngModel)]="selectedAnimal.location">
-        <label>Edit sex:</label>
-        <input class="form-control"[(ngModel)]="selectedAnimal.sex">
-        <label>Edit caretakers:</label>
-        <input class="form-control"[(ngModel)]="selectedAnimal.caretakers">
-        <label>Edit likes:</label>
-        <input class="form-control"[(ngModel)]="selectedAnimal.likes">
-        <label>Enter dislikes:</label>
-        <input class="form-control"[(ngModel)]="selectedAnimal.dislikes"><br>
-        <button class="btn btn-primary btn-lg" (click)="finishedEditing()">Submit</button>
-      </div>
-    </div>
+    <edit-animal [childSelectedAnimal]="selectedAnimal" (doneButtonClickedSender)="finishedEditing()"></edit-animal>
     <animal-list [childAnimalList]="masterAnimals" (clickSender)="editAnimal($event)"></animal-list>
   </div>
   `
