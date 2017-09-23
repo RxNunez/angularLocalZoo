@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Animal } from './animal.model';
 
 @Component({
@@ -22,7 +22,7 @@ import { Animal } from './animal.model';
         <p>Likes:&nbsp;{{currentAnimal.likes}}</p>
         <p>Dislikes:&nbsp;{{currentAnimal.dislikes}}</p>
         <br><br>
-        <button class="btn btn-success btn-lg" (click)="editAnimal(currentAnimal)">Edit!</button>
+        <button class="btn btn-success btn-lg" (click)="editAnimalButton(currentAnimal)">Edit!</button>
       </div>
     </div>
   </div>
@@ -32,5 +32,22 @@ import { Animal } from './animal.model';
 
 export class AnimalListComponent {
   @Input() childAnimalList: Animal[];
+  @Output() clickSender = new EventEmitter();
+
+  public currentTime = new Date();
+  month: number = this.currentTime.getMonth() + 1;
+  day: number = this.currentTime.getDate();
+  year: number = this.currentTime.getFullYear();
+  public age: number;
+  public birthDates;
+
+  editAnimalButton(animalToEdit: Animal){
+    this.clickSender.emit(animalToEdit);
+  }
+
+  getAge(bday){
+    this.birthDates = new Date(bday);
+    return this.age = this.currentTime.getFullYear()-this.birthDates.getFullYear();
+  }
 
 }

@@ -46,18 +46,12 @@ import { Animal } from './animal.model';
         <button class="btn btn-primary btn-lg" (click)="finishedEditing()">Submit</button>
       </div>
     </div>
-    <animal-list [childAnimalList]="masterAnimals"></animal-list>
+    <animal-list [childAnimalList]="masterAnimals" (clickSender)="editAnimal($event)"></animal-list>
   </div>
   `
 })
 
 export class AppComponent {
-  public currentTime = new Date();
-  month: number = this.currentTime.getMonth() + 1;
-  day: number = this.currentTime.getDate();
-  year: number = this.currentTime.getFullYear();
-  public age: number;
-  public birthDates;
 
   masterAnimals: Animal[] = [
     new Animal('/resources/images/arcticFox.jpg','Arctic Fox','Moon','10-13-2016','Carnivore','Northern Trail',5,'Female','Cool shade','Loud Noises'),
@@ -66,11 +60,6 @@ export class AppComponent {
   ];
 
     selectedAnimal = null;
-
-  getAge(bday){
-    this.birthDates = new Date(bday);
-    return this.age = this.currentTime.getFullYear()-this.birthDates.getFullYear();
-  }
 
   editAnimal(clickedAnimal){
     this.selectedAnimal = clickedAnimal;
