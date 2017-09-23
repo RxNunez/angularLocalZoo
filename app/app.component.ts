@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Animal } from './animal.model';
 
 @Component({
   selector: 'app-root',
@@ -45,28 +46,7 @@ import { Component } from '@angular/core';
         <button class="btn btn-primary btn-lg" (click)="finishedEditing()">Submit</button>
       </div>
     </div>
-    <div class="well" *ngFor="let currentAnimal of masterAnimals">
-      <div class="row">
-        <div class="col-md-4">
-          <img src="{{currentAnimal.image}}">
-          <p>{{currentAnimal.species}}</p>
-        </div>
-        <div class="col-md-4">
-          <h3>&nbsp;{{currentAnimal.name}}</h3>
-          <p>Age:&nbsp;{{getAge(currentAnimal.bday)}}</p>
-          <p>Birthday:&nbsp;{{currentAnimal.bday}}</p>
-          <p>Sex:&nbsp;{{currentAnimal.sex}}</p>
-          <p>Number of caretakers:&nbsp;{{currentAnimal.caretakers}}</p>
-        </div>
-        <div class="col-md-4">
-          <p>Location:&nbsp;{{currentAnimal.location}}</p>
-          <p>Likes:&nbsp;{{currentAnimal.likes}}</p>
-          <p>Dislikes:&nbsp;{{currentAnimal.dislikes}}</p>
-          <br><br>
-          <button class="btn btn-success btn-lg" (click)="editAnimal(currentAnimal)">Edit!</button>
-        </div>
-      </div>
-    </div>
+    <animal-list [childAnimalList]="masterAnimals"></animal-list>
   </div>
   `
 })
@@ -100,9 +80,4 @@ export class AppComponent {
     this.selectedAnimal = null;
   }
 
-}
-
-export class Animal {
-  constructor(public image: string, public species: string, public name: string, public bday: string, public diet: string, public location: string, public caretakers: number, public sex: string, public likes: string, public dislikes: string){
-  }
 }
