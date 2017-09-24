@@ -4,7 +4,14 @@ import { Animal } from './animal.model';
 @Component({
   selector: 'animal-list',
   template: `
-  <div class="well" *ngFor="let currentAnimal of childAnimalList">
+  <label>View as:</label>
+  <select (change)="onChange($event.target.value)" class="form-control form-control-lg">
+    <option selected="selected" value="all">All Animals</option>
+    <option value="young">All Young Animals</option>
+    <option value="old">All Old Animals</option>
+  </select>
+
+  <div class="well" *ngFor="let currentAnimal of childAnimalList | sort:filter">
     <div class="row">
       <div class="col-md-4">
         <img src="{{currentAnimal.image}}" alt="https://www.indiegamealliance.com/images_iga/no_image.png">
@@ -42,6 +49,8 @@ export class AnimalListComponent {
   public age: number;
   public birthDates;
 
+  filter: string = "all"
+
   editAnimalButton(animalToEdit: Animal){
     this.clickSender.emit(animalToEdit);
   }
@@ -50,5 +59,10 @@ export class AnimalListComponent {
     this.birthDates = new Date(bday);
     return this.age = this.currentTime.getFullYear()-this.birthDates.getFullYear();
   }
+
+  onChange(optionFromMenu) {
+    this.filter = optionFromMenu;
+  }
+
 
 }

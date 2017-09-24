@@ -8,12 +8,7 @@ import { Animal } from './animal.model';
     <h1 class="jumbotron">ZOOmAPP</h1>
     <div class="row">
       <div class="col-md-9">
-        <label>View as:</label>
-        <select (change)="onChange($event.target.value)" class="form-control form-control-lg">
-          <option selected="selected" value="all">All Animals</option>
-          <option value="young">All Young Animals</option>
-          <option value="old">All Old Animals</option>
-        </select>
+        
       </div>
       <div class="col-md-3">
         <button class="btn btn-default btn-lg" (click)="clickAddAnimal()"><span class="add-plus">&nbsp;+<br></span>Add New Animal</button>
