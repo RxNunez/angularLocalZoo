@@ -4,7 +4,6 @@ import { Animal } from './animal.model';
 @Component({
   selector: 'edit-animal',
   template: `
-  <hr>
   <div class="form-group row" *ngIf="childSelectedAnimal">
     <div class="col-md-6">
       <h2>EDIT FORM</h2>

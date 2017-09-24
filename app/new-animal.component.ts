@@ -4,7 +4,6 @@ import { Animal } from './animal.model';
 @Component({
   selector: 'new-animal',
   template: `
-  <hr>
   <div class="form-group row well" *ngIf="childAddedAnimal">
     <div class="col-md-6">
       <h2>ADD FORM</h2>

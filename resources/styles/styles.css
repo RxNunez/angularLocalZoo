@@ -1,13 +1,57 @@
-h1{
-  text-align: center;
-}
-
 img {
     max-width: 100%;
     height: auto;
 }
 
 body{
-  background-color: black;
+  background-image: url('/resources/images/background.jpg');
+  background-size: 100%;
+  background-position-x: center;
+  background-position-y: center;
+  background-size:cover;
+  background-repeat: no-repeat;
+  height: 100%;
   font-family: 'Source Sans Pro', sans-serif;
+}
+
+h1{
+  float: left;
+}
+
+.title{
+  font-size: 100px;
+}
+
+.right {
+  float: right;
+  vertical-align: middle;
+  font-size: 50px;
+  text-align: center;
+}
+
+nav {
+  clear: both;
+}
+
+.navbar {
+  background-color: black;
+  border: none;
+  border-bottom: 1px dashed white;
+  opacity: 0.9;
+}
+
+.navbar-default .navbar-brand {
+    color: white;
+}
+
+.add-plus{
+  color: black;
+}
+
+.list-output{
+  top: 18%;
+  bottom:0;
+  position:fixed;
+  overflow-y:scroll;
+  width: 80%;
 }

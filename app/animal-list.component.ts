@@ -4,33 +4,35 @@ import { Animal } from './animal.model';
 @Component({
   selector: 'animal-list',
   template: `
-  <label>View as:</label>
-  <select (change)="onChange($event.target.value)" class="form-control form-control-lg">
-    <option selected="selected" value="all">All Animals</option>
-    <option value="young">All Young Animals</option>
-    <option value="old">All Old Animals</option>
-  </select>
-
-  <div class="well" *ngFor="let currentAnimal of childAnimalList | sort:filter">
-    <div class="row">
-      <div class="col-md-4">
-        <img src="{{currentAnimal.image}}" alt="https://www.indiegamealliance.com/images_iga/no_image.png">
-        <p>{{currentAnimal.species}}</p>
-      </div>
-      <div class="col-md-4">
-        <h3>&nbsp;{{currentAnimal.name}}</h3>
-        <p>Age:&nbsp;{{getAge(currentAnimal.bday)}}</p>
-        <p>Birthday:&nbsp;{{currentAnimal.bday}}</p>
-        <p>Sex:&nbsp;{{currentAnimal.sex}}</p>
-        <p>Number of caretakers:&nbsp;{{currentAnimal.caretakers}}</p>
-      </div>
-      <div class="col-md-4">
-        <p>Location:&nbsp;{{currentAnimal.location}}</p>
-        <p>Diet:&nbsp;{{currentAnimal.diet}}</p>
-        <p>Likes:&nbsp;{{currentAnimal.likes}}</p>
-        <p>Dislikes:&nbsp;{{currentAnimal.dislikes}}</p>
-        <br><br>
-        <button class="btn btn-success btn-lg" (click)="editAnimalButton(currentAnimal)">Edit!</button>
+  <div class="list-output" *ngIf="childAnimalToggle">
+    <label>View as:</label>
+    <select (change)="onChange($event.target.value)" class="form-control form-control-lg">
+      <option selected="selected" value="all">All Animals</option>
+      <option value="young">All Young Animals</option>
+      <option value="old">All Old Animals</option>
+    </select>
+    <br>
+    <div class="well" *ngFor="let currentAnimal of childAnimalList | sort:filter">
+      <div class="row">
+        <div class="col-md-4">
+          <img src="{{currentAnimal.image}}" alt="no photo available">
+          <p>{{currentAnimal.species}}</p>
+        </div>
+        <div class="col-md-4">
+          <h3>&nbsp;{{currentAnimal.name}}</h3>
+          <p>Age:&nbsp;{{getAge(currentAnimal.bday)}}</p>
+          <p>Birthday:&nbsp;{{currentAnimal.bday}}</p>
+          <p>Sex:&nbsp;{{currentAnimal.sex}}</p>
+          <p>Number of caretakers:&nbsp;{{currentAnimal.caretakers}}</p>
+        </div>
+        <div class="col-md-4">
+          <p>Location:&nbsp;{{currentAnimal.location}}</p>
+          <p>Diet:&nbsp;{{currentAnimal.diet}}</p>
+          <p>Likes:&nbsp;{{currentAnimal.likes}}</p>
+          <p>Dislikes:&nbsp;{{currentAnimal.dislikes}}</p>
+          <br><br>
+          <button class="btn btn-success btn-lg" (click)="editAnimalButton(currentAnimal)">Edit!</button>
+        </div>
       </div>
     </div>
   </div>
@@ -39,6 +41,7 @@ import { Animal } from './animal.model';
 
 
 export class AnimalListComponent {
+  @Input() childAnimalToggle = true;
   @Input() childAnimalList: Animal[];
   @Output() clickSender = new EventEmitter();
 
@@ -63,6 +66,4 @@ export class AnimalListComponent {
   onChange(optionFromMenu) {
     this.filter = optionFromMenu;
   }
-
-
 }
