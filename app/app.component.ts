@@ -5,7 +5,7 @@ import { Animal } from './animal.model';
   selector: 'app-root',
   template: `
   <nav class="navbar navbar-default navbar-fixed-top well">
-    <h1 class="title navbar-brand">ZOO<span class="mapp">mapper</span></h1>
+    <h1 class="title navbar-brand">ZOO<span class="mapp">mAPP !!!</span></h1>
     <button class="right btn btn-warning btn-lg" *ngIf="editIsClicked" (click)="clickAddAnimal()"><span class="add-plus">+</span>&nbsp;ADD</button>
   </nav>
   <div class="container">

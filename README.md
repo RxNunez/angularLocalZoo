@@ -6,16 +6,28 @@
 
 ## Description
 
-_Ask user's input for their condition or doctor's name then program will display the list of doctors that matches to their input._
+_An application that helps track animals in a zoo. It display all the information per animal. It also has the ability to add and edit animal information._
 
 ## Development Specifications
 
 | Behavior      | Input | Output |
 | ------------- | ------------- | ------------- |
-| |  |   |
+| Program can display list of animals | All animals | Species: Arctic Fox ....  |
+| Program can edit animal information | current Species: Arctic Fox  | new Species: Black Fox  |
+| Program can add animal | new Species: Lion  | Lion  |
+| Program can filter animal by young and old age | All young animals  | Arctic Fox Age: 2 y/o  |
 
 * _***********_
-![image of animal](https://github.com/malethr/doctorAPI/blob/master/images/*****.png)
+![image of animal](https://github.com/malethr/angularLocalZoo/blob/master/resources/images/view.png)
+![image of animal](https://github.com/malethr/angularLocalZoo/blob/master/resources/images/editform.png)
+![image of animal](https://github.com/malethr/angularLocalZoo/blob/master/resources/images/addform.png)
+
+## Future Development
+
+_Display the pictures and species name on homepage in three column and display the information once clicked_
+_Add delete button for the animal list_
+_Add map and viewable in hover mode in location info_
+_Magnify images during when hover_
 
 ## Setup/Installation Requirements
 
@@ -35,7 +47,7 @@ _JS_
 _Html_
 _CSS_
 _bootstrap_
-_ajax_
+_Angular_
 _JSON_
 _Bower_
 _Angular_
