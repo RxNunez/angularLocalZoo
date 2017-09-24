@@ -16,7 +16,15 @@ export class SortPipe implements PipeTransform {
   public birthDates;
   getAge(bday){
     this.birthDates = new Date(bday);
-    return this.age = this.currentTime.getFullYear()-this.birthDates.getFullYear();
+    let years = this.currentTime.getFullYear() - this.birthDates.getFullYear();
+    if (this.currentTime.getMonth() < this.birthDates.getMonth()){
+      years--;
+    } else if (this.currentTime.getMonth() == this.birthDates.getMonth()){
+      if(this.currentTime.getDate() < this.birthDates.getDate()){
+        years--;
+      }
+    }
+    return years;
   }
 
   transform(input: Animal[], sortAnimal) {

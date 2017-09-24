@@ -4,16 +4,17 @@ import { Animal } from './animal.model';
 @Component({
   selector: 'edit-animal',
   template: `
-  <div class="form-group row" *ngIf="childSelectedAnimal">
+  <div class="form-group row well edit-form" *ngIf="childSelectedAnimal">
     <div class="col-md-6">
       <h2>EDIT FORM</h2>
       <h3>{{childSelectedAnimal.species}}</h3>
       <img src={{childSelectedAnimal.image}}>
+      <button class="btn btn-danger btn-lg cancel" (click)="cancelButtonClicked()">Cancel Edit</button>
     </div>
     <div class="col-md-6">
       <label>Edit species:</label>
       <input class="form-control"[(ngModel)]="childSelectedAnimal.species">
-      <label>Edit image URL:</label>
+      <label>Edit image (Paste new URL):</label>
       <input class="form-control" [(ngModel)]="childSelectedAnimal.image">
       <label>Edit name:</label>
       <input class="form-control"[(ngModel)]="childSelectedAnimal.name">
@@ -29,7 +30,7 @@ import { Animal } from './animal.model';
       <input class="form-control"[(ngModel)]="childSelectedAnimal.likes">
       <label>Enter dislikes:</label>
       <input class="form-control"[(ngModel)]="childSelectedAnimal.dislikes"><br>
-      <button class="btn btn-primary btn-lg" (click)="doneButtonClicked()">Submit</button>
+      <button class="btn btn-primary btn-lg submit" (click)="doneButtonClicked()">Submit</button>
     </div>
   </div>
   `
@@ -38,8 +39,13 @@ import { Animal } from './animal.model';
 export class EditAnimalComponent {
   @Input() childSelectedAnimal: Animal;
   @Output() doneButtonClickedSender = new EventEmitter();
+  @Output() cancelButtonClickedSender = new EventEmitter();
 
   doneButtonClicked(){
     this.doneButtonClickedSender.emit();
+  }
+
+  cancelButtonClicked(){
+    this.cancelButtonClickedSender.emit();
   }
 }

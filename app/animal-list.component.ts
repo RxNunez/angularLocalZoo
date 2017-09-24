@@ -13,27 +13,37 @@ import { Animal } from './animal.model';
         <option value="old">All Old Animals</option>
       </select>
     </div>
-    <div class="well" *ngFor="let currentAnimal of childAnimalList | sort:filter">
+    <div class="well" id="output" *ngFor="let currentAnimal of childAnimalList | sort:filter">
       <div class="row">
         <div class="col-md-4">
           <img src="{{currentAnimal.image}}" alt="no photo available">
-          <p>{{currentAnimal.species}}</p>
+          <div class="species-edit">
+            <h3>{{currentAnimal.species}}</h3>
+          </div>
         </div>
-        <div class="col-md-4">
-          <h3>&nbsp;{{currentAnimal.name}}</h3>
-          <p>Age:&nbsp;{{getAge(currentAnimal.bday)}}</p>
-          <p>Birthday:&nbsp;{{currentAnimal.bday}}</p>
-          <p>Sex:&nbsp;{{currentAnimal.sex}}</p>
-          <p>Number of caretakers:&nbsp;{{currentAnimal.caretakers}}</p>
+        <div class="col-md-3">
+          <h4>Name:</h4>
+          <h4>Age:</h4>
+          <h4>Birthday:</h4>
+          <h4>Gender:</h4>
+          <h4>Caretakers:</h4>
+          <h4>Location:</h4>
+          <h4>Diet:</h4>
+          <h4>Likes:</h4>
+          <h4>Dislikes:</h4>
         </div>
-        <div class="col-md-4">
-          <p>Location:&nbsp;{{currentAnimal.location}}</p>
-          <p>Diet:&nbsp;{{currentAnimal.diet}}</p>
-          <p>Likes:&nbsp;{{currentAnimal.likes}}</p>
-          <p>Dislikes:&nbsp;{{currentAnimal.dislikes}}</p>
-          <br><br>
-          <button class="btn btn-success btn-lg" (click)="editAnimalButton(currentAnimal)">Edit!</button>
+        <div class="col-md-5">
+          <h4>{{currentAnimal.name}}</h4>
+          <h4>{{getAge(currentAnimal.bday)}}</h4>
+          <h4>{{currentAnimal.bday}}</h4>
+          <h4>{{currentAnimal.sex}}</h4>
+          <h4>{{currentAnimal.caretakers}}</h4>
+          <h4>{{currentAnimal.location}}</h4>
+          <h4>{{currentAnimal.diet}}</h4>
+          <h4>{{currentAnimal.likes}}</h4>
+          <h4>{{currentAnimal.dislikes}}</h4>
         </div>
+        <button class="btn btn-success btn-lg edit" (click)="editAnimalButton(currentAnimal)"><img src="https://cdn3.iconfinder.com/data/icons/3d-printing-icon-set/512/Edit.png" id="pencil">&nbsp;Edit!</button>
       </div>
     </div>
   </div>

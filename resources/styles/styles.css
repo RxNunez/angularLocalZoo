@@ -72,3 +72,35 @@ nav {
 .view select{
   font-size: 20px;
 }
+
+#output {
+  background-color: black;
+  color: white;
+  vertical-align: middle;
+}
+
+.data {
+  font-size: 20px;
+}
+
+.edit, .submit, .cancel, .add{
+  width: 100%;
+  font-size: 25px;
+}
+
+img#pencil{
+  width: 3%;
+  height: auto;
+}
+
+.edit-form, .add-form{
+  margin-top: 12%;
+}
+
+.cancel{
+  margin-top: 10px;
+}
+
+.edit-form input, .add-form input{
+  font-size: 25px;
+}
