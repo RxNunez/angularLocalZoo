@@ -15,7 +15,7 @@ import { Animal } from './animal.model';
       <label>Edit species:</label>
       <input class="form-control"[(ngModel)]="childSelectedAnimal.species">
       <label>Edit image URL:</label>
-      <input type="url" class="form-control" [(ngModel)]="childSelectedAnimal.image">
+      <input class="form-control" [(ngModel)]="childSelectedAnimal.image">
       <label>Edit name:</label>
       <input class="form-control"[(ngModel)]="childSelectedAnimal.name">
       <label>Edit bday (MM-DD-YYY):</label>

@@ -16,12 +16,13 @@ import { Animal } from './animal.model';
         </select>
       </div>
       <div class="col-md-3">
-        <button class="btn btn-default btn-lg"><span class="add-plus">&nbsp;+<br></span>Add New Animal</button>
+        <button class="btn btn-default btn-lg" (click)="clickAddAnimal()"><span class="add-plus">&nbsp;+<br></span>Add New Animal</button>
       </div>
     </div>
+    <new-animal [childAddedAnimal]="addingAnimal" (newAnimalSender)="addAnimal($event)"></new-animal>
     <edit-animal [childSelectedAnimal]="selectedAnimal" (doneButtonClickedSender)="finishedEditing()"></edit-animal>
     <animal-list [childAnimalList]="masterAnimals" (clickSender)="editAnimal($event)"></animal-list>
-    <new-animal (newAnimalSender)="addAnimal($event)"></new-animal>
+
   </div>
   `
 })
@@ -35,6 +36,11 @@ export class AppComponent {
   ];
 
     selectedAnimal = null;
+    addingAnimal = null;
+
+  clickAddAnimal(){
+    this.addingAnimal = true;
+  }
 
   editAnimal(clickedAnimal){
     this.selectedAnimal = clickedAnimal;
@@ -46,6 +52,7 @@ export class AppComponent {
 
   addAnimal(newAnimalFromChild: Animal) {
     this.masterAnimals.push(newAnimalFromChild);
+    this.addingAnimal = null;
   }
 
 }
