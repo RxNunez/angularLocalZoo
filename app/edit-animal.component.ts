@@ -9,7 +9,7 @@ import { Animal } from './animal.model';
       <h2>EDIT FORM</h2>
       <h3>{{childSelectedAnimal.species}}</h3>
       <img src={{childSelectedAnimal.image}}>
-      <button class="btn btn-danger btn-lg cancel" (click)="cancelButtonClicked()">Cancel Edit</button>
+      <button class="btn btn-danger btn-lg cancel" (click)="cancelButtonClicked()">X Cancel Edit</button>
     </div>
     <div class="col-md-6">
       <label>Edit species:</label>

@@ -15,7 +15,7 @@ import { Animal } from './animal.model';
       <input class="form-control" #newAnimalName>
       <label>Add bday (MM-DD-YYY):</label>
       <input class="form-control" #newAnimalBday>
-      <button class="btn btn-danger btn-lg cancel" (click)="cancelAddButtonClicked()">Cancel Add</button>
+      <button class="btn btn-danger btn-lg cancel" (click)="cancelAddButtonClicked()">X Cancel Add</button>
     </div>
     <div class="col-md-6">
       <label>Add location:</label>
