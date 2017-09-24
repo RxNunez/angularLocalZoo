@@ -36,7 +36,7 @@ nav {
 .navbar {
   background-color: black;
   border: none;
-  border-bottom: 1px dashed white;
+  border-bottom: 2px dashed white;
   opacity: 0.9;
 }
 
@@ -54,4 +54,21 @@ nav {
   position:fixed;
   overflow-y:scroll;
   width: 80%;
+}
+
+.view {
+  text-align: center;
+  background-color: black;
+  width: 45%;
+  text-align: center;
+  margin-left:25%;
+}
+
+.view label{
+  color: white;
+  font-size: 25px;
+}
+
+.view select{
+  font-size: 20px;
 }

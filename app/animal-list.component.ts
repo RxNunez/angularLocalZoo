@@ -5,13 +5,14 @@ import { Animal } from './animal.model';
   selector: 'animal-list',
   template: `
   <div class="list-output" *ngIf="childAnimalToggle">
-    <label>View as:</label>
-    <select (change)="onChange($event.target.value)" class="form-control form-control-lg">
-      <option selected="selected" value="all">All Animals</option>
-      <option value="young">All Young Animals</option>
-      <option value="old">All Old Animals</option>
-    </select>
-    <br>
+    <div class="form-group well view">
+      <label>View as:</label>
+      <select class="form-control"(change)="onChange($event.target.value)">
+        <option selected="selected" value="all">All Animals</option>
+        <option value="young">All Young Animals</option>
+        <option value="old">All Old Animals</option>
+      </select>
+    </div>
     <div class="well" *ngFor="let currentAnimal of childAnimalList | sort:filter">
       <div class="row">
         <div class="col-md-4">
