@@ -17,8 +17,11 @@ _An application that helps track animals in a zoo. It display all the informatio
 | Program can add animal | new Species: Lion  | Lion  |
 | Program can filter animal by young and old age | All young animals  | Arctic Fox Age: 2 y/o  |
 
+* _Viewing all animals_
 ![image of animal](https://github.com/malethr/angularLocalZoo/blob/master/resources/images/view.png)
+* _Editing Form_
 ![image of edit form](https://github.com/malethr/angularLocalZoo/blob/master/resources/images/editForm.png)
+* _Adding Form_
 ![image of add form](https://github.com/malethr/angularLocalZoo/blob/master/resources/images/addForm.png)
 
 ## Future Development
