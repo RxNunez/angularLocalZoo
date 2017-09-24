@@ -7,7 +7,7 @@ import { Animal } from './animal.model';
   <div class="well" *ngFor="let currentAnimal of childAnimalList">
     <div class="row">
       <div class="col-md-4">
-        <img src="{{currentAnimal.image}}">
+        <img src="{{currentAnimal.image}}" alt="https://www.indiegamealliance.com/images_iga/no_image.png">
         <p>{{currentAnimal.species}}</p>
       </div>
       <div class="col-md-4">
@@ -19,6 +19,7 @@ import { Animal } from './animal.model';
       </div>
       <div class="col-md-4">
         <p>Location:&nbsp;{{currentAnimal.location}}</p>
+        <p>Diet:&nbsp;{{currentAnimal.diet}}</p>
         <p>Likes:&nbsp;{{currentAnimal.likes}}</p>
         <p>Dislikes:&nbsp;{{currentAnimal.dislikes}}</p>
         <br><br>

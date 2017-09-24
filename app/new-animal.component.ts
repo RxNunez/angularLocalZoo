@@ -5,7 +5,7 @@ import { Animal } from './animal.model';
   selector: 'new-animal',
   template: `
   <hr>
-  <div class="form-group row" *ngIf="childAddedAnimal">
+  <div class="form-group row well" *ngIf="childAddedAnimal">
     <div class="col-md-6">
       <h2>ADD FORM</h2>
       <label>Edit species:</label>
@@ -20,6 +20,8 @@ import { Animal } from './animal.model';
     <div class="col-md-6">
       <label>Edit location:</label>
       <input class="form-control" #newAnimalLocation>
+      <label>Edit Diet:</label>
+      <input class="form-control" #newAnimalDiet>
       <label>Edit sex:</label>
       <input class="form-control" #newAnimalSex>
       <label>Edit caretakers:</label>
